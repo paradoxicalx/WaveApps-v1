@@ -1,0 +1,5 @@
+Pengerjaan terakhir adalah pada fitur hotspot. 
+Dimana baru dapat digunakan untuk melihat data hotspot dan juga menambahkan user hotspot baru.
+
+Beberapa bug yang belum di fix :
+-

@@ -1,0 +1,56 @@
+<?php
+require_once($_SERVER['DOCUMENT_ROOT']."/assets/func/sqlQu.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/assets/func/api-mikrotik.php");
+$login->login_redir();
+
+$ipRouteros = "10.10.1.1";
+$Username="admin";
+$Pass="sapijo..15";
+$port=8728;
+$interface = "ether1";
+
+$API = new routeros_api();
+$API->debug = false;
+if ($API->connect($ipRouteros , $Username , $Pass, $port)) {
+
+  if (isset($_GET['resource'])) {
+		$API->write("/system/resource/print",true);
+		$READ = $API->read(false);
+    $ARRAY = $API->parse_response($READ);
+    echo json_encode($ARRAY);
+  }
+  if (isset($_GET['name-oid'])) {
+		$API->write("/system/identity/print",false);
+    $API->write("=.proplist=name.oid",true);
+		$READ = $API->read(false);
+    $ARRAY = $API->parse_response($READ);
+		echo substr($ARRAY[0]['name.oid'], strpos($ARRAY[0]['name.oid'], ".")+1);
+  }
+  if (isset($_GET['bytesin-oid'])) {
+		$API->write("/interface/print",false);
+    $API->write("?name=$interface",false);
+    $API->write("=.proplist=bytes-in.oid",true);
+		$READ = $API->read(false);
+    $ARRAY = $API->parse_response($READ);
+		echo substr($ARRAY[0]['bytes-in.oid'], strpos($ARRAY[0]['bytes-in.oid'], ".")+1);
+  }
+  if (isset($_GET['bytesout-oid'])) {
+		$API->write("/interface/print",false);
+    $API->write("?name=$interface",false);
+    $API->write("=.proplist=bytes-out.oid",true);
+		$READ = $API->read(false);
+    $ARRAY = $API->parse_response($READ);
+		echo substr($ARRAY[0]['bytes-out.oid'], strpos($ARRAY[0]['bytes-out.oid'], ".")+1);
+  }
+  if (isset($_GET['memoryused-oid'])) {
+		$API->write("/system/resource/print",false);
+    $API->write("=.proplist=used-memory.oid",true);
+		$READ = $API->read(false);
+    $ARRAY = $API->parse_response($READ);
+		echo substr($ARRAY[0]['used-memory.oid'], strpos($ARRAY[0]['used-memory.oid'], ".")+1);
+  }
+
+}
+$API->disconnect();
+
+?>

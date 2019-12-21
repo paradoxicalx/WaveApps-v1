@@ -1,0 +1,23 @@
+<?php
+require_once($_SERVER['DOCUMENT_ROOT']."/assets/func/sqlQu.php");
+$login->login_redir();
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Print Invoice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link media="all" rel="stylesheet" href="../../assets/css/fontawesome/css/all.css">
+    <link media="all" rel="stylesheet" href="../../assets/css/AdminLTE/AdminLTE.min.css">
+    <link media="all" rel="stylesheet" href="../../assets/css/bootstrap/bootstrap.min.css">
+    <link media="all" rel="stylesheet" href="../../assets/css/my.css">
+  </head>
+  <body id="print-area">
+
+  </body>
+  <script src="../../assets/js/jquery/jquery.min.js"></script>
+  <script src="../../assets/js/bootstrap/bootstrap.min.js"></script>
+  <script src="../../assets/js/print/jQuery.print.min.js"></script>
+</html>

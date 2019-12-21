@@ -1,0 +1,59 @@
+#vt100 #cursor.bright {
+  background-color: #ffffff;
+  color:            black;
+}
+
+#vt100 #cursor.dim {
+  background-color: rgba(0, 0, 0, .0);
+  opacity:          0.2;
+  -moz-opacity:     0.2;
+  filter:           alpha(opacity=20);
+}
+
+#vt100 #scrollable {
+  color:            #ffffff;
+  background-color: rgba(0, 0, 0, .0);
+}
+
+#vt100 #scrollable.inverted {
+  color:            rgba(0, 0, 0, .0);
+  background-color: #ffffff;
+}
+
+#vt100 .ansiDef {
+  color:            #ffffff;
+}
+
+#vt100 .ansiDefR {
+  color:            rgba(0, 0, 0, .0);
+}
+
+#vt100 .bgAnsiDef {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#vt100 .bgAnsiDefR {
+  background-color: #ffffff;
+}
+
+#vt100 #scrollable.inverted .ansiDef {
+  color:            #000000;
+}
+
+#vt100 #scrollable.inverted .ansiDefR {
+  color:            #ffffff;
+}
+
+#vt100 #scrollable.inverted .bgAnsiDef {
+  background-color: #ffffff;
+}
+
+#vt100 #scrollable.inverted .bgAnsiDefR {
+  background-color: #000000;
+}
+
+::-webkit-scrollbar {
+width: 0px;
+}
+
+
