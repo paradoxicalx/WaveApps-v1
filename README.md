@@ -1,3 +1,5 @@
+Pengembangan dan dukungan untuk aplikasi ini telah dihentikan. Untuk mendapatkan informasi terkait versi terbaru dari aplikasi ini dapat menghubungi telegram https://t.me/DhedhyPoetra
+
 # 1. Tentang WaveApps
 
 Aplikasi yang digunakan untuk management jaringan RT/RW Net dengan beberapa fungsi diantaranya :
